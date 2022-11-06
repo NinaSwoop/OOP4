@@ -3,7 +3,7 @@
 class Animal
 {
     public string $name;
-    public float $size = 100;
+    private float $size = 100; 
     public bool $carnivorous = false;
     public int $pawNumber;
     public string $threatenedLevel = 'NE';
@@ -23,4 +23,18 @@ class Animal
     {
         return $this->size > 50 && $this->carnivorous === true;
     }
+
+public function __construct(string $name)
+{
+    $this->name = $name;
+}
+
+public function getSize(): float
+{
+    return $this->size;
+}
+public function setSize(int $size): void
+{
+    $this->size = $size;
+}
 }
